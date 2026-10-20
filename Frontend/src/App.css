@@ -1,0 +1,213 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  min-height: 100vh;
+  background-color: rgb(75, 1, 94); /* Taki agar thoda sa bhi background bache, toh woh black ki jagah purple hi dikhe */
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+.landingPageContainer {
+  width: 100%;
+  min-height: 100vw;
+  background: rgb(75, 1, 94);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.landingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.landingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 1.6rem;
+
+}
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 70vh;
+  align-items: center;
+}
+.landingMainContainer > div:nth-child(1){
+ 
+  font-size: 2.2rem;
+}
+.landingMainContainer > div:nth-child(1) div[role="button"]{
+  background-color: rgb(5, 72, 59);
+  width: fit-content;
+  padding: 1rem;
+  margin-top: 1.4rem;
+   border-radius: 20px;
+
+}
+
+.landingMainContainer > div:nth-child(1) div[role="button"] a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+ 
+}
+.landingMainContainer > div:nth-child(2) img {
+  height: 20vh;
+  width: auto;
+}
+
+
+
+
+/* Authentication Page Styling */
+.authContainer {
+  display: flex;
+  width: 100%;        /* 100vw ki jagah 100% karein */
+  min-height: 100vh;
+  background-color: #121212;
+  overflow: hidden;   /* Sefty ke liye andar ka content bahar na jaye */
+}
+
+.authImageSection {
+
+  background-image: url('https://unsplash.com'); /* Clean abstract image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .authImageSection {
+    display: none; /* Mobile par automatic image chhip jayegi */
+  }
+}
+
+.authFormSection {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 2rem;
+}
+
+.authPaper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authAvatar {
+  font-size: 2rem;
+  background-color: #ff4081;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.authPaper h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.authForm {
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.inputGroup input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #3f51b5;
+}
+
+.authOptions {
+  margin-bottom: 1.5rem;
+}
+
+.rememberMe {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #303f9f;
+}
+
+.authLinks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.authLinks a {
+  font-size: 0.85rem;
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.authLinks a:hover {
+  text-decoration: underline;
+}
+
+.authCopyright {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}

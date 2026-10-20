@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Video Meeting Application Backend",
+  "license": "ISC",
+  "author": "Suraj sahu",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "prod": "pm2 start src/app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.2.1",
+    "http-status": "^2.1.0",
+    "mongodb": "^7.6.0",
+    "mongoose": "^9.10.2",
+    "socket.io": "^4.8.3"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

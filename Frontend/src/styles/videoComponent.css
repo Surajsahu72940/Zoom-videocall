@@ -1,0 +1,652 @@
+
+/* =========================================
+   GLOBAL MEETING LAYOUT
+========================================= */
+
+.meetingPanel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #300039;
+    color: #fff;
+}
+
+.meetingPanel * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   MEETING HEADER
+========================================= */
+
+.meetingHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 54px;
+    margin-bottom: 12px;
+}
+
+.meetingHeader h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.meetingHeader span {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MAIN WORKSPACE
+========================================= */
+
+.meetingWorkspace {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+
+    width: 100%;
+    height: calc(100% - 66px);
+    min-height: 0;
+}
+
+/* =========================================
+   VIDEO AREA
+========================================= */
+
+.meetingVideoArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+
+    padding-bottom: 1px;
+}
+
+/* =========================================
+   VIDEO CONTAINER
+========================================= */
+
+.meetVideoContainer {
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+
+    width: 100%;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #71427c #300039;
+}
+
+/* Local and remote video tiles */
+
+.meetUserVideo,
+.meetingVideoTile {
+    position: relative;
+    
+
+    width: 220px;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #080808;
+    border: 1px solid #684071;
+    border-radius: 14px;
+}
+
+/* Video */
+
+.meetUserVideo video,
+.meetingVideoTile video {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    background: #000;
+    transform: scaleX(-1);
+}
+
+/* Participant name */
+
+.meetUserVideo span,
+.meetingVideoTile span {
+    display: block;
+
+    padding: 1px;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+
+    background: #17051d;
+    color: #fff;
+
+    font-size: 14px;
+}
+
+/* Remote video grid */
+
+.conferenceView {
+    display: contents;
+}
+
+/* =========================================
+   BOTTOM CONTROLS
+========================================= */
+
+.buttonContainers {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin: 12px auto 0;
+    padding: 10px 18px;
+
+    flex-shrink: 0;
+
+    background: #19051f;
+    border: 1px solid #51235f;
+    border-radius: 50px;
+}
+
+.buttonContainers .MuiIconButton-root {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+    
+
+    color: #fff;
+}
+
+/* =========================================
+   CHAT SIDEBAR
+========================================= */
+
+.chatSidebar {
+    display: flex;
+    flex: 0 0 320px;
+    flex-direction: column;
+
+    width: 320px;
+    min-width: 280px;
+    max-width: 360px;
+    height: 100%;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: #1b0922;
+    border: 1px solid #60316e;
+    border-radius: 16px;
+}
+
+/* Chat header */
+
+.chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 54px;
+    padding: 6px 12px;
+
+    flex-shrink: 0;
+
+    background: #260b30;
+    border-bottom: 1px solid #472051;
+}
+
+.chatHeader h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0;
+
+    color: #fff;
+    font-size: 19px;
+}
+
+.chatHeader .MuiIconButton-root {
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   CHAT MESSAGES
+========================================= */
+
+.chatMessages {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 12px;
+
+    min-height: 0;
+    padding: 14px 10px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #71427c #1b0922;
+}
+
+/* Empty state */
+
+.noMessages {
+    margin: auto;
+
+    text-align: center;
+    color: #d2bfd8;
+
+    font-size: 15px;
+}
+
+/* Message row */
+
+.chatMessage {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+/* Own messages */
+
+.chatMessage.ownMessage {
+    flex-direction: row-reverse;
+}
+
+/* Avatar */
+
+.chatAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+
+    border-radius: 50%;
+    background: #9225c7;
+    color: #fff;
+
+    font-weight: bold;
+}
+
+/* Message content */
+
+.chatMessageContent {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    max-width: 82%;
+}
+
+.chatMessage.ownMessage .chatMessageContent {
+    align-items: flex-end;
+}
+
+/* Sender */
+
+.chatSender {
+    margin-bottom: 4px;
+
+    color: #d58bff;
+    font-size: 12px;
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+}
+
+/* Message bubble */
+
+.chatBubble {
+    max-width: 100%;
+    padding: 9px 12px;
+
+    border-radius: 4px 13px 13px 13px;
+
+    background: #392044;
+    color: #fff;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.chatMessage.ownMessage .chatBubble {
+    background: #522363;
+    border-radius: 13px 4px 13px 13px;
+}
+
+/* Timestamp */
+
+.chatTimestamp {
+    margin-top: 4px;
+
+    color: #b9a9c0;
+    font-size: 10px;
+}
+
+/* =========================================
+   CHAT INPUT
+========================================= */
+
+.chatControls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 10px;
+
+    flex-shrink: 0;
+
+    background: #220c2b;
+    border-top: 1px solid #472051;
+}
+
+.chatControls .MuiTextField-root {
+    flex: 1;
+    min-width: 0;
+}
+
+.chatControls .MuiInputBase-root {
+    color: #fff;
+    background: #2c1235;
+}
+
+.chatControls .MuiOutlinedInput-notchedOutline {
+    border-color: #60316e;
+}
+
+.chatControls .MuiInputBase-input::placeholder {
+    color: #c5b4cc;
+    opacity: 1;
+}
+
+.chatControls .MuiIconButton-root {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.lobbyError {
+    margin: 8px 0;
+    padding: 10px 12px;
+
+    color: #fff;
+    background: #8b1e35;
+
+    border: 1px solid #d74b68;
+    border-radius: 8px;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .meetingPanel {
+        padding: 12px;
+    }
+
+    .meetingWorkspace {
+        gap: 10px;
+    }
+
+    .chatSidebar {
+        flex-basis: 280px;
+        width: 280px;
+        min-width: 240px;
+    }
+
+    .meetUserVideo,
+    .meetingVideoTile {
+        flex-basis: 190px;
+        width: 190px;
+    }
+
+    .buttonContainers {
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .buttonContainers .MuiIconButton-root {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .meetingPanel {
+        height: 100vh;
+        height: 100dvh;
+
+        min-height: 0;
+        padding: 8px;
+
+        overflow: hidden;
+    }
+
+    .meetingHeader {
+        min-height: 48px;
+        margin-bottom: 6px;
+    }
+
+    .meetingHeader h2 {
+        font-size: 19px;
+    }
+
+    .meetingHeader span {
+        font-size: 12px;
+    }
+
+    .meetingWorkspace {
+        height: calc(100% - 54px);
+        min-height: 0;
+
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Video and controls section */
+
+    .meetingVideoArea {
+        flex: 0 0 44%;
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        padding: 0;
+    }
+
+    .meetVideoContainer {
+        flex: 1 1 0;
+
+        min-height: 0;
+
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 8px;
+    }
+
+    .meetUserVideo,
+    .meetingVideoTile {
+        flex: 0 1 calc(50% - 4px);
+
+        width: calc(50% - 4px);
+        max-width: calc(50% - 4px);
+        min-width: 0;
+
+        border-radius: 10px;
+    }
+
+    .meetUserVideo video,
+    .meetingVideoTile video {
+        aspect-ratio: 4 / 3;
+    }
+
+    .meetUserVideo span,
+    .meetingVideoTile span {
+        padding: 6px 4px;
+        font-size: 11px;
+    }
+
+    /* Keep controls visible */
+
+    .buttonContainers {
+        flex-wrap: nowrap;
+        gap: 2px;
+
+        width: fit-content;
+        max-width: 100%;
+
+        margin-top: 8px;
+        padding: 5px 6px;
+    }
+
+    .buttonContainers .MuiIconButton-root {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        padding: 5px;
+    }
+
+    .buttonContainers .MuiSvgIcon-root {
+        font-size: 21px;
+    }
+
+    /* Chat fills remaining space */
+
+    .chatSidebar {
+        flex: 1 1 0;
+
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+
+        height: auto;
+        min-height: 0;
+
+        border-radius: 13px;
+    }
+
+    .chatHeader {
+        min-height: 42px;
+        padding: 4px 8px;
+    }
+
+    .chatHeader h3 {
+        font-size: 16px;
+    }
+
+    .chatMessages {
+        padding: 10px 8px;
+        gap: 10px;
+    }
+
+    .chatControls {
+        padding: 7px;
+        gap: 6px;
+    }
+
+    .chatControls .MuiIconButton-root {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+    .meetingPanel {
+        padding: 5px;
+    }
+
+    .meetingWorkspace {
+        gap: 6px;
+    }
+
+    .meetUserVideo,
+    .meetingVideoTile {
+        flex-basis: calc(50% - 4px);
+        width: calc(50% - 4px);
+        max-width: calc(50% - 4px);
+    }
+
+    .buttonContainers {
+        gap: 0;
+        padding: 4px;
+    }
+
+    .buttonContainers .MuiIconButton-root {
+        width: 33px;
+        height: 33px;
+        min-width: 33px;
+        padding: 4px;
+    }
+}
+
