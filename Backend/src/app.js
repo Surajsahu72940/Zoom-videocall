@@ -19,12 +19,18 @@ const io = connectToSocket(server);
 const PORT = process.env.PORT || 8000;
 
 // CORS configuration
+// CORS configuration
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+
+    // Yahan apna actual deployed Frontend URL likho
+    "https://zoom-videocall-frontend.onrender.com"
+];
+
 app.use(
     cors({
-        origin: [
-            "http://localhost:5173",
-            "http://127.0.0.1:5173"
-        ],
+        origin: allowedOrigins,
         credentials: true
     })
 );
