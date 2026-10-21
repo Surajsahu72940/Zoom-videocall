@@ -73,7 +73,7 @@ const start = async () => {
         );
 
         // Start backend server
-        server.listen(PORT, () => {
+        server.listen(PORT, "0.0.0.0", () => {
             console.log(
                 `Backend running at http://localhost:${PORT}`
             );

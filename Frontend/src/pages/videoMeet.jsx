@@ -24,8 +24,9 @@ import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
 import SendIcon from "@mui/icons-material/Send";
+import server from "../environment";
 
-const SERVER_URL = "http://localhost:8000";
+const SERVER_URL = server;
 
 const PEER_CONFIG = {
     iceServers: [

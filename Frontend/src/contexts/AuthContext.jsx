@@ -5,13 +5,14 @@ import React, {
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import server from "../environment";
 
 // Create Authentication Context
 export const AuthContext = createContext({});
 
 // Axios Client
 const client = axios.create({
-    baseURL: "http://localhost:8000/api/v1/users"
+    baseURL: `${server}/api/v1/users`
 });
 
 // Authentication Provider
