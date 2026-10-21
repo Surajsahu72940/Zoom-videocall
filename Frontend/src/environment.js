@@ -4,8 +4,8 @@ let IS_PROD =true;
 
 
 const server = IS_PROD ?
-    "http://localhost:8000":
-    "https://zoom-videocall-4.onrender.com"
+   "https://zoom-videocall-frontend.onrender.com":
+    "https://localhost:8000"
 
 
 export default server;
